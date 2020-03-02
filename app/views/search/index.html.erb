@@ -1,0 +1,14 @@
+<h4> <%=@book.title%> </h4>
+<p>Author: <%= @book.author %> </p>
+
+<p>Genres:</p>
+<% @book.subjects.each do |subject| %>
+  <li> <%=subject %> </li>
+<%end%>
+
+<p>This book has <%=@reviews.count%> Reviews</p>
+<% @reviews.each_with_index do |review, index| %>
+  <p class="review">Review <%=index + 1 %>:</p>
+  <%= review.summary %> 
+  <p class="pub-date"><%= review.pub_date %></p>
+<%end%>
